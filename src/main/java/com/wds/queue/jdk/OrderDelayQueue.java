@@ -1,4 +1,7 @@
-package com.wds.queue.jdk.common;
+package com.wds.queue.jdk;
+
+import com.wds.queue.jdk.OrderDelay;
+import com.wds.queue.vo.Order;
 
 import java.util.concurrent.DelayQueue;
 /**
@@ -7,7 +10,7 @@ import java.util.concurrent.DelayQueue;
  * @USER: wds
  * @DATE: 2021/4/14 13:31
  */
-public class OrderDelayQueue implements com.wds.queue.jdk.common.DelayQueue{
+public class OrderDelayQueue implements com.wds.queue.jdk.DelayQueue {
 
     /**
      * 过期时长，单位(纳秒)
@@ -35,11 +38,11 @@ public class OrderDelayQueue implements com.wds.queue.jdk.common.DelayQueue{
     }
 
     /**
-     * 删除队列中的元素
+     * 删除队列中的元素,阻塞,存在过期元素才会删除
      * @return
      */
     @Override
-    public OrderDelay pop() throws InterruptedException {
+    public Order pop() throws InterruptedException {
         return delayQueue.take();
     }
 

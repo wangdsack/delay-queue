@@ -1,4 +1,6 @@
-package com.wds.queue.jdk.common;
+package com.wds.queue.jdk;
+
+import com.wds.queue.vo.Order;
 
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;

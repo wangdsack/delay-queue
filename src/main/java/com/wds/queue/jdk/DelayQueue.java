@@ -1,11 +1,13 @@
-package com.wds.queue.jdk.common;
+package com.wds.queue.jdk;
+
+import com.wds.queue.vo.Order;
 
 public interface DelayQueue {
 
 
     public boolean push(String tmpKey,String message);
 
-    public OrderDelay pop() throws InterruptedException;
+    public Order pop() throws InterruptedException;
 
     public void clean();
 
